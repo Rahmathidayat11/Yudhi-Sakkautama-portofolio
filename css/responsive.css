@@ -79,3 +79,43 @@
   .footer__bottom{flex-direction:column;align-items:flex-start}
   .cursor-glow{display:none}
 }
+
+/* ==========================================================================
+   Sentuhan & kerapian lintas perangkat
+   ========================================================================== */
+
+/* Target sentuh minimal 44px agar nyaman ditekan di ponsel.
+   Area klik diperluas tanpa mengubah tampilan visual. */
+@media (hover:none), (max-width:860px){
+  .footer__top{padding:.65rem 0;min-height:44px;display:inline-flex;align-items:center}
+  .contact__list a{min-height:44px;display:inline-flex;align-items:center}
+  .nav__link{min-height:44px;display:flex;align-items:center}
+  .affil-card__link,.journal-item__link{min-height:44px;display:inline-flex;align-items:center}
+  .pmodal__arrow{min-height:44px;display:inline-flex;align-items:center}
+  .lightbox__nav{width:44px;height:44px}
+}
+
+/* Jaring pengaman: cegah media & teks panjang menembus tepi layar */
+img,svg,video,canvas{max-width:100%}
+.hero__roles,.hero__quote,.section__title,.section__lead,
+.pmodal__title,.pmodal__lead,.timeline__card h3,.journal-item h3,
+.affil-card__body strong,.exp-card h3,.work h3{overflow-wrap:anywhere;word-break:break-word}
+
+/* Layar sangat sempit (mis. 320px) — rapatkan hanya yang perlu */
+@media (max-width:380px){
+  .hero__badge{padding:.6rem .8rem}
+  .hero__badge span{font-size:1.3rem}
+  .contact__form{padding:1.5rem 1.2rem}
+  .pmodal__content{padding:1.5rem 1.2rem 1.4rem}
+  .pmodal__nav{flex-direction:column}
+  .pmodal__arrow{justify-content:center}
+  .timeline__item{padding-left:1.25rem}
+}
+
+/* Layar pendek (ponsel lanskap) — modal tidak boleh terpotong */
+@media (max-height:520px){
+  .pmodal__panel{max-height:94vh}
+  .pmodal__media{max-height:30vh;min-height:140px}
+  .lightbox__figure img{max-height:66vh}
+}
+
