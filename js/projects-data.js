@@ -1,0 +1,81 @@
+/* ==========================================================================
+   04. PROJECTS DATA — Sumber tunggal data detail proyek
+   Tambah/ubah proyek cukup di file ini.
+   Kunci (key) harus sama dengan data-open-project / data-project di HTML.
+   ========================================================================== */
+window.YS = window.YS || {};
+
+window.YS.PROJECTS = {
+  smkp: {
+    title: 'Pengembangan & Implementasi SMKP Minerba',
+    cat: 'HSE & Safety',
+    role: 'Peran: Lead',
+    img: 'assets/potret-dokumentasi-topi.jpg',
+    lead: 'Menyusun kerangka Sistem Manajemen Keselamatan Pertambangan (SMKP) Minerba dan mendampingi penerapannya agar kepatuhan menjadi bagian dari cara kerja sehari-hari, bukan sekadar tumpukan dokumen.',
+    context: 'Perusahaan membutuhkan sistem keselamatan pertambangan yang selaras dengan regulasi Minerba dan dapat diterapkan di lapangan, bukan hanya untuk keperluan audit.',
+    challenge: 'Mengubah pandangan bahwa keselamatan hanyalah administrasi, serta memastikan setiap prosedur benar-benar dijalankan oleh tim operasional.',
+    approach: 'Menyusun kerangka SMKP bersama tim lintas fungsi, menyelaraskan dokumen dengan praktik lapangan, dan mendampingi penerapan melalui sosialisasi serta pengawasan berkala.',
+    result: 'Sistem keselamatan tertata, dapat diaudit secara konsisten, dan lebih mudah dipahami oleh pekerja di lapangan.',
+    tags: ['SMKP Minerba', 'Regulasi', 'Dokumentasi', 'Pendampingan lapangan'],
+  },
+  morowali: {
+    title: 'HSE Management — Eksplorasi Nikel Morowali',
+    cat: 'Exploration · HSE',
+    role: 'Peran: HSE Management',
+    img: 'assets/ilustrasi-operasi-lapangan-ai.jpg',
+    lead: 'Pengelolaan aspek keselamatan pada kegiatan eksplorasi nikel di area kerja dengan mobilitas tinggi dan medan yang menantang.',
+    context: 'Kegiatan eksplorasi berlangsung di lokasi terpencil dengan perpindahan tim dan alat yang cepat, sehingga risiko keselamatan perlu dikelola secara dinamis.',
+    challenge: 'Menyelaraskan target eksplorasi dengan disiplin keselamatan harian tanpa memperlambat pencapaian progres.',
+    approach: 'Menyusun identifikasi bahaya per lokasi kerja, mengatur alur mobilitas tim dan alat, serta menetapkan protokol tanggap darurat di setiap titik kerja.',
+    result: 'Protokol kerja lapangan yang jelas dan dipahami seluruh tim, dengan disiplin keselamatan yang terjaga sepanjang kegiatan.',
+    tags: ['Eksplorasi nikel', 'Manajemen risiko', 'Tanggap darurat', 'Kerja lapangan'],
+  },
+  pemboran: {
+    title: 'Sistem Keselamatan Kerja Pemboran & Eksplorasi',
+    cat: 'Exploration',
+    role: 'Peran: Dikerjakan langsung',
+    img: 'assets/grafik-stratigrafi.jpg',
+    lead: 'Rancangan prosedur kerja pemboran yang memperhatikan risiko alat, manusia, dan lingkungan sekitar lokasi bor.',
+    context: 'Setiap lokasi bor memiliki kondisi geologi dan topografi yang berbeda, sehingga prosedur kerja harus aman namun tetap dapat diterapkan secara konsisten.',
+    challenge: 'Variasi kondisi lokasi bor menuntut prosedur yang luwes menyesuaikan medan, namun tetap tegas pada standar keselamatan.',
+    approach: 'Menyusun prosedur kerja bor berbasis penilaian risiko, menetapkan standar operasional alat, serta menyiapkan langkah mitigasi untuk kondisi khusus di lapangan.',
+    result: 'Standar kerja bor yang konsisten di setiap lokasi dan lebih mudah diterapkan oleh tim pemboran.',
+    tags: ['Pemboran', 'Prosedur kerja', 'Penilaian risiko', 'Standar operasional'],
+  },
+  monitoring: {
+    title: 'Sistem Monitoring Operasional',
+    cat: 'Digital Innovation',
+    role: 'Peran: Inisiasi & pendampingan',
+    img: 'assets/aktivitas-digital-kucing.jpg',
+    lead: 'Pengembangan cara pemantauan aktivitas operasional agar progres dan kendala terlihat lebih cepat oleh tim.',
+    context: 'Data operasional tersebar di berbagai catatan manual dan laporan terpisah, menyulitkan tim melihat gambaran menyeluruh secara cepat.',
+    challenge: 'Menyatukan data lapangan yang tersebar ke dalam satu alur yang sederhana dan mudah dipahami tim tanpa memberatkan operator.',
+    approach: 'Merancang alur pelaporan digital yang ringkas, menggabungkan data dari beberapa sumber, dan mendampingi tim selama masa transisi dari cara manual.',
+    result: 'Pelaporan operasional lebih cepat, mudah ditelusuri, dan progres maupun kendala dapat diketahui lebih awal.',
+    tags: ['Digitalisasi', 'Monitoring', 'Pelaporan operasional', 'Alur data'],
+  },
+  geosurvey: {
+    title: 'Pengembangan Aplikasi Geosurvey Spatialize',
+    cat: 'Digital Innovation',
+    role: 'Peran: Kontribusi teknis',
+    img: 'assets/jelajah-geologi.jpg',
+    lead: 'Kontribusi pada pengembangan aplikasi survei geologi yang membantu pencatatan dan pemetaan data lapangan secara digital.',
+    context: 'Tim geologi membutuhkan cara pencatatan survei yang lebih rapi dan mudah diolah, dibanding pencatatan manual yang rentan hilang atau tidak konsisten.',
+    challenge: 'Menjembatani kebutuhan geologi lapangan dengan alur data digital, memastikan aplikasi tetap praktis dipakai di kondisi lapangan.',
+    approach: 'Membantu menerjemahkan kebutuhan data geologi ke dalam alur aplikasi, menguji penggunaan di lapangan, dan menyesuaikan agar sesuai kebiasaan tim survei.',
+    result: 'Proses pencatatan survei menjadi lebih rapi, terstruktur, dan mudah diolah untuk kebutuhan analisis selanjutnya.',
+    tags: ['Aplikasi survei', 'Geologi', 'Pemetaan digital', 'Data lapangan'],
+  },
+  dokumen: {
+    title: 'Dokumen Teknis & Manajemen Pertambangan',
+    cat: 'Project Management',
+    role: 'Peran: Penyusunan',
+    img: 'assets/potret-dokumentasi-merah.jpg',
+    lead: 'Penyusunan dokumen teknis dan manajemen yang menjadi rujukan pelaksanaan pekerjaan di lapangan.',
+    context: 'Pekerjaan pertambangan memerlukan dokumen resmi yang menjadi acuan bersama antara tim teknis, operasional, dan pihak terkait lainnya.',
+    challenge: 'Menjaga keselarasan antara dokumen resmi dan praktik nyata di lapangan, agar dokumen tidak sekadar formalitas.',
+    approach: 'Menyusun dan meninjau dokumen teknis secara berkala, menyelaraskannya dengan kondisi lapangan, serta memastikan setiap bagian mudah dipahami oleh pengguna.',
+    result: 'Rujukan kerja yang jelas bagi tim teknis maupun operasional, dengan dokumen yang tetap relevan terhadap kebutuhan lapangan.',
+    tags: ['Dokumen teknis', 'Manajemen pertambangan', 'Rujukan kerja', 'Tata kelola'],
+  },
+};

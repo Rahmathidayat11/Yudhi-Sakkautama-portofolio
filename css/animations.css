@@ -1,0 +1,140 @@
+/* ==========================================================================
+   04. ANIMATIONS — Reveal base states + Text animation engine
+   (split, shine, scramble, sweep)
+   ========================================================================== */
+
+/* ==========================================================================
+   REVEAL ANIMATION BASE STATES
+   ========================================================================== */
+/* PENTING: state awal reveal tidak boleh memakai clip-path penuh
+   (inset(0 0 100% 0)) atau opacity:0 pada elemen yang diamati
+   IntersectionObserver — elemen jadi dianggap tidak terlihat (ratio 0)
+   sehingga observer tidak pernah memicu dan konten tak pernah muncul.
+   Karena itu mask-up hanya menggeser + memakai clip sebagian. */
+[data-reveal]{opacity:0;will-change:transform,opacity}
+[data-reveal="fade-up"]{transform:translateY(34px)}
+[data-reveal="fade-left"]{transform:translateX(-34px)}
+[data-reveal="fade-right"]{transform:translateX(-46px)}
+[data-reveal="fade-scale"]{transform:scale(.94)}
+[data-reveal="zoom"]{transform:scale(.9) translateY(18px)}
+[data-reveal="mask-up"]{transform:translateY(18px);clip-path:inset(0 0 88% 0)}
+[data-reveal].is-visible{
+  opacity:1;transform:none;clip-path:inset(0 0 -12% 0);
+  transition:opacity .9s var(--ease-soft),transform 1s var(--ease-soft),clip-path 1s var(--ease-soft);
+}
+[data-tilt]{transform-style:preserve-3d;transition:transform .6s var(--ease-soft)}
+
+/* ==========================================================================
+   TEXT ANIMATION ENGINE — SPLIT, SHINE, SCRAMBLE, SWEEP
+   ========================================================================== */
+
+/* per-kata / per-karakter */
+.split-word{display:inline-block;overflow:hidden;vertical-align:top}
+/* Pada heading hero yang dipecah per karakter, mask dilakukan oleh tiap
+   karakter (charRise), bukan oleh kata — hilangkan overflow agar huruf
+   tidak terpotong saat naik dari bawah. */
+.hero__line--accent .split-word,
+.hero__line[data-split="chars"] .split-word{overflow:visible}
+.split-word__inner{display:inline-block;transform:translateY(108%) rotate(5deg);opacity:0}
+/* Hero memakai animasi karakter, jadi inner kata tidak perlu mask */
+.hero__line .split-word__inner{transform:none;opacity:1}
+[data-reveal].is-visible .split-word__inner{
+  transform:none;opacity:1;
+  transition:transform .95s var(--ease-soft),opacity .7s var(--ease);
+  transition-delay:var(--i,0ms);
+}
+[data-reveal].is-visible [data-reveal]{transform:none}
+
+.split-char{display:inline-block;opacity:0;transform:translateY(.62em) rotateX(-72deg) scale(.86)}
+/* Karakter hero: gabungkan animasi naik (charRise) dengan geser gradient
+   pada heading aksen agar kilau tetap berjalan. */
+.hero__line.is-visible .split-char{
+  animation:charRise .86s var(--ease-soft) forwards;
+  animation-delay:var(--i,0ms);
+}
+.hero__line--accent.is-visible .split-char{
+  animation:charRise .86s var(--ease-soft) forwards;
+  animation-delay:var(--i,0ms);
+}
+@keyframes charRise{
+  0%{opacity:0;transform:translateY(.62em) rotateX(-72deg) scale(.86);filter:blur(6px)}
+  60%{filter:blur(0)}
+  100%{opacity:1;transform:none;filter:blur(0)}
+}
+/* ruang tetap agar tidak goyang saat split */
+.hero__line[data-split]{display:block}
+
+/* gradient shine menyapu
+   Catatan penting: `background-clip:text` TIDAK diwarisi ke elemen anak.
+   Saat heading dipecah oleh split-text, tiap unit (kata/karakter) harus
+   memegang gradient & clip-nya sendiri, jika tidak teks menjadi transparan
+   tanpa latar gradient alias tidak terlihat. */
+@keyframes shineSweep{
+  0%{background-position:130% 0}
+  55%,100%{background-position:-30% 0}
+}
+.shine{
+  background-image:linear-gradient(100deg,
+    var(--navy) 0%,var(--navy) 34%,var(--gold) 47%,var(--gold-soft) 53%,var(--navy) 66%,var(--navy) 100%);
+  background-size:260% 100%;
+  -webkit-background-clip:text;background-clip:text;
+  color:transparent;
+  -webkit-text-fill-color:transparent;
+  animation:shineSweep 5.4s var(--ease) infinite;
+}
+/* Setelah di-split: matikan gradient di induk (anak tidak mewarisinya),
+   lalu terapkan gradient kilau ke setiap unit agar tetap terlihat. */
+.shine:has(.split-word) ,
+.shine:has(.split-word__inner){
+  background-image:none;
+  -webkit-text-fill-color:currentColor;
+  animation:none;
+}
+.shine .split-word,
+.shine .split-word__inner,
+.shine .split-char{
+  background-image:linear-gradient(100deg,
+    var(--navy) 0%,var(--navy) 34%,var(--gold) 47%,var(--gold-soft) 53%,var(--navy) 66%,var(--navy) 100%);
+  background-size:260% 100%;
+  -webkit-background-clip:text;background-clip:text;
+  color:transparent;
+  -webkit-text-fill-color:transparent;
+}
+/* Kilau hanya berjalan setelah heading terlihat, agar tidak bentrok
+   dengan animasi reveal (transform) pada unit yang sama. */
+.shine.is-visible .split-word__inner,
+.shine.is-visible .split-char{
+  animation:shineSweep 5.4s var(--ease) infinite;
+}
+/* Pada heading gelap, ganti warna gradient agar kontras di latar navy */
+.timeline-section .shine .split-word__inner,
+.timeline-section .shine .split-char,
+.contact .shine .split-word__inner,
+.contact .shine .split-char{
+  background-image:linear-gradient(100deg,
+    var(--warm-white) 0%,var(--warm-white) 34%,var(--gold) 47%,var(--gold-soft) 53%,var(--warm-white) 66%,var(--warm-white) 100%);
+}
+
+/* scramble highlight */
+mark[data-scramble],
+mark.scramble-mark{
+  background:none;color:inherit;font-weight:600;
+  font-variant-numeric:tabular-nums;
+  border-bottom:1px solid rgba(201,162,39,.55);
+  transition:color .3s,border-color .3s;
+}
+mark[data-scramble].is-scrambling{color:var(--olive);border-color:var(--olive)}
+
+/* spotlight mengikuti kursor pada kartu */
+.exp-card[data-spot]::after,
+.work[data-spot]::after,
+.affil-card[data-spot]::after,
+.journal-item[data-spot]::after{
+  content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;
+  opacity:0;transition:opacity .45s var(--ease);
+  background:radial-gradient(340px circle at var(--mx,50%) var(--my,50%),rgba(201,162,39,.16),transparent 62%);
+}
+.exp-card[data-spot]:hover::after,
+.work[data-spot]:hover::after,
+.affil-card[data-spot]:hover::after,
+.journal-item[data-spot]:hover::after{opacity:1}

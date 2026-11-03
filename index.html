@@ -1,0 +1,860 @@
+﻿<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Yudhi Sakkautama — Mining Exploration · HSE · Project Management · Digital Innovation</title>
+<meta name="description" content="Personal Professional Hub Yudhi Sakkautama — berbagi pengalaman lapangan, karya, pemikiran, dan rekam jejak profesional di industri eksplorasi mineral dan batubara." />
+
+<!-- Tipografi: serif untuk heading, sans-serif modern untuk isi -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<!-- Stylesheet dimuat berurutan: base → komponen → section → animasi → overlay → responsive -->
+<link rel="stylesheet" href="css/base.css" />
+<link rel="stylesheet" href="css/components.css" />
+<link rel="stylesheet" href="css/sections.css" />
+<link rel="stylesheet" href="css/animations.css" />
+<link rel="stylesheet" href="css/overlays.css" />
+<link rel="stylesheet" href="css/responsive.css" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%2312243f'/%3E%3Ctext x='50' y='68' font-family='Georgia,serif' font-size='52' fill='%23c9a227' text-anchor='middle'%3EYS%3C/text%3E%3C/svg%3E" />
+</head>
+<body>
+
+<!-- ===== PRELOADER ===== -->
+<div class="preloader" id="preloader">
+  <div class="preloader__inner">
+    <svg class="preloader__mark" viewBox="0 0 100 100" aria-hidden="true">
+      <circle class="preloader__ring" cx="50" cy="50" r="42" />
+      <path class="preloader__strata" d="M20 66 L38 44 L52 58 L68 34 L82 66" />
+    </svg>
+    <p class="preloader__name">Yudhi&nbsp;Sakkautama</p>
+    <p class="preloader__tag">Exploring Ideas, Building Knowledge, Creating Impact.</p>
+    <div class="preloader__bar"><span id="preloaderBar"></span></div>
+  </div>
+</div>
+
+<!-- ===== PROGRESS BAR SCROLL ===== -->
+<div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+<!-- ===== CURSOR GLOW ===== -->
+<div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+
+<!-- ===== NAVBAR ===== -->
+<header class="nav" id="nav">
+  <div class="nav__wrap">
+    <a href="#home" class="nav__brand" data-cursor="home">
+      <span class="nav__brand-mark">YS</span>
+      <span class="nav__brand-text">
+        <strong class="link-sweep">Yudhi Sakkautama</strong>
+        <em>Personal Professional Hub</em>
+      </span>
+    </a>
+
+    <nav class="nav__links" id="navLinks" aria-label="Navigasi utama">
+      <a href="#home" class="nav__link is-active">Home</a>
+      <a href="#about" class="nav__link">About</a>
+      <a href="#expertise" class="nav__link">Expertise</a>
+      <a href="#portfolio" class="nav__link">Portfolio</a>
+      <a href="#affiliations" class="nav__link">Affiliations</a>
+      <a href="#journal" class="nav__link">Journal</a>
+      <a href="#contact" class="nav__link">Contact</a>
+    </nav>
+
+    <a href="#contact" class="btn btn--ghost nav__cta">Let's Connect<span class="btn__dot"></span></a>
+
+    <button class="nav__toggle" id="navToggle" aria-label="Buka menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main>
+
+<!-- ===== 01. HERO ===== -->
+<section class="hero" id="home">
+  <div class="hero__bg" aria-hidden="true">
+    <div class="hero__grain"></div>
+    <div class="hero__aurora"></div>
+    <div class="hero__beam"></div>
+    <div class="hero__orb hero__orb--1" data-parallax="0.16"></div>
+    <div class="hero__orb hero__orb--2" data-parallax="-0.12"></div>
+    <svg class="hero__contour" viewBox="0 0 1440 900" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M-50 620 C 220 520, 380 700, 640 590 S 1080 480, 1500 600" />
+      <path d="M-50 690 C 240 600, 400 760, 660 660 S 1100 560, 1500 680" />
+      <path d="M-50 760 C 260 680, 420 820, 680 730 S 1120 640, 1500 760" />
+      <path d="M-50 300 C 300 240, 500 380, 780 300 S 1180 220, 1500 320" />
+    </svg>
+    <span class="hero__spark hero__spark--1"></span>
+    <span class="hero__spark hero__spark--2"></span>
+    <span class="hero__spark hero__spark--3"></span>
+    <span class="hero__spark hero__spark--4"></span>
+  </div>
+
+  <div class="hero__wrap container">
+    <div class="hero__left">
+      <p class="eyebrow reveal" data-reveal="fade-up">
+        <span class="eyebrow__line"></span>
+        Personal Professional Hub
+      </p>
+
+      <h1 class="hero__title">
+        <span class="hero__line reveal" data-reveal="mask-up" data-delay="60" data-split="chars">Yudhi</span>
+        <span class="hero__line hero__line--accent reveal" data-reveal="mask-up" data-delay="160" data-split="chars">Sakkautama</span>
+      </h1>
+
+      <p class="hero__roles reveal" data-reveal="fade-up" data-delay="260">
+        <span class="typing" id="typing"></span><span class="caret" aria-hidden="true"></span>
+      </p>
+
+      <blockquote class="hero__quote reveal" data-reveal="fade-up" data-delay="340">
+        “I work at the intersection of <mark data-scramble>exploration</mark>, safety, people, and
+        technology — turning field experience into knowledge and meaningful solutions.”
+      </blockquote>
+
+      <div class="hero__actions reveal" data-reveal="fade-up" data-delay="420">
+        <a href="#portfolio" class="btn btn--solid" data-magnetic>
+          Explore My Works <span class="btn__arrow">→</span>
+        </a>
+        <a href="#about" class="btn btn--line" data-magnetic>About Me</a>
+        <a href="#" class="btn btn--line btn--download" id="downloadCv">
+          Download Professional Profile
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 19h16"/></svg>
+        </a>
+      </div>
+
+      <ul class="hero__meta reveal" data-reveal="fade-up" data-delay="500">
+        <li><strong data-counter="20" data-suffix="+">0</strong><span>Tahun pengalaman industri</span></li>
+        <li><strong data-counter="4" data-suffix="">0</strong><span>Bidang keahlian utama</span></li>
+        <li><strong data-counter="3" data-suffix="+">0</strong><span>Ekonomi &amp; wilayah kerja</span></li>
+      </ul>
+    </div>
+
+    <div class="hero__right">
+      <figure class="hero__portrait reveal" data-reveal="fade-scale" data-delay="220" data-tilt>
+        <div class="hero__portrait-frame">
+          <img src="assets/foto-profesional.png" alt="Potret profesional Yudhi Sakkautama" loading="eager" />
+        </div>
+        <figcaption>
+          <span class="dot-pulse"></span>
+          Field experience · Safety · Knowledge
+        </figcaption>
+        <div class="hero__badge">
+          <span>20+</span>
+          <small>years in the field</small>
+        </div>
+      </figure>
+
+      <div class="hero__scroll" aria-hidden="true">
+        <span>scroll</span>
+        <span class="hero__scroll-line"></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== MARQUEE BAND ===== -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee__track">
+    <div class="marquee__group">
+      <span>Mining Exploration</span><b>◆</b>
+      <span>HSE Professional</span><b>◆</b>
+      <span>Project Management</span><b>◆</b>
+      <span>Digital Innovation</span><b>◆</b>
+      <span>GIS &amp; Survey Technology</span><b>◆</b>
+      <span>SMKP Minerba</span><b>◆</b>
+    </div>
+    <div class="marquee__group">
+      <span>Mining Exploration</span><b>◆</b>
+      <span>HSE Professional</span><b>◆</b>
+      <span>Project Management</span><b>◆</b>
+      <span>Digital Innovation</span><b>◆</b>
+      <span>GIS &amp; Survey Technology</span><b>◆</b>
+      <span>SMKP Minerba</span><b>◆</b>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 02. ABOUT ===== -->
+<section class="section about" id="about">
+  <div class="container">
+    <header class="section__head">
+      <p class="eyebrow reveal" data-reveal="fade-up"><span class="eyebrow__line"></span>02 — About Me</p>
+      <h2 class="section__title reveal" data-reveal="mask-up" data-split="words">
+        Bukan sekadar CV online,<br />
+        tapi <em>ruang berbagi</em> pengalaman lapangan.
+      </h2>
+    </header>
+
+    <div class="about__grid">
+      <div class="about__text">
+        <p class="reveal" data-reveal="fade-up">
+          Saya bekerja di persimpangan antar bidang: eksplorasi geologi, keselamatan
+          pertambangan, manajemen operasional, dan inovasi digital. Lebih dari
+          <strong>20 tahun</strong> perjalanan profesional di industri eksplorasi mineral dan
+          batubara membentuk cara saya memahami pekerjaan — bahwa keputusan teknis yang baik
+          selalu lahir dari pemahaman lapangan, data yang rapi, dan orang-orang yang aman
+          saat bekerja.
+        </p>
+        <p class="reveal" data-reveal="fade-up" data-delay="80">
+          Di halaman ini saya berbagi apa yang saya kerjakan, apa yang saya pelajari, apa yang
+          pernah saya bangun, serta organisasi dan proyek yang pernah saya menjadi bagiannya.
+        </p>
+
+        <ul class="about__facts">
+          <li class="reveal" data-reveal="fade-left"><span class="fact__num">01</span> Eksplorasi mineral &amp; batubara, pemboran, dan operasi lapangan.</li>
+          <li class="reveal" data-reveal="fade-left" data-delay="70"><span class="fact__num">02</span> HSE &amp; keselamatan pertambangan (SMKP Minerba, risk management).</li>
+          <li class="reveal" data-reveal="fade-left" data-delay="140"><span class="fact__num">03</span> Project &amp; operational management dari perencanaan hingga kontrol.</li>
+          <li class="reveal" data-reveal="fade-left" data-delay="210"><span class="fact__num">04</span> Teknologi, digitalisasi, GIS, dan solusi survei digital.</li>
+        </ul>
+      </div>
+
+      <aside class="about__card" data-tilt>
+        <div class="about__card-inner">
+          <span class="about__card-label">Working Philosophy</span>
+          <p class="about__card-quote">
+            “A professional journey shaped by field experience, driven by knowledge,
+            and inspired by innovation.”
+          </p>
+          <div class="about__card-lines">
+            <span></span><span></span><span></span>
+          </div>
+          <div class="about__card-portrait">
+            <img src="assets/jelajah-geologi.jpg" alt="Aktivitas jelajah geologi di lapangan" loading="lazy" />
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 03. EXPERTISE ===== -->
+<section class="section expertise" id="expertise">
+  <div class="container">
+    <header class="section__head section__head--center">
+      <p class="eyebrow reveal" data-reveal="fade-up"><span class="eyebrow__line"></span>03 — Expertise</p>
+      <h2 class="section__title reveal" data-reveal="mask-up" data-split="words">What I Do</h2>
+      <p class="section__lead reveal" data-reveal="fade-up" data-delay="100">
+        Empat bidang utama yang membentuk cara saya bekerja di lapangan maupun di meja kerja.
+      </p>
+    </header>
+
+    <div class="expertise__grid">
+      <article class="exp-card reveal" data-reveal="fade-up" data-tilt data-spot>
+        <div class="exp-card__icon">
+          <svg viewBox="0 0 48 48" aria-hidden="true">
+            <path d="M4 34 L16 18 L26 30 L34 20 L44 34" />
+            <path d="M4 40 L44 40" />
+            <circle cx="38" cy="11" r="4" />
+          </svg>
+        </div>
+        <h3>Mining &amp; Exploration</h3>
+        <p>Geologi, pemboran, dan operasi eksplorasi — dari perencanaan titik bor hingga tafsir stratigrafi dan pelaporan.</p>
+        <ul class="exp-card__tags"><li>Geology</li><li>Drilling</li><li>Exploration Ops</li></ul>
+      </article>
+
+      <article class="exp-card reveal" data-reveal="fade-up" data-delay="80" data-tilt data-spot>
+        <div class="exp-card__icon">
+          <svg viewBox="0 0 48 48" aria-hidden="true">
+            <path d="M24 4l17 7v12c0 11-7 18-17 21C14 41 7 34 7 23V11z" />
+            <path d="M17 24l5 5 9-10" />
+          </svg>
+        </div>
+        <h3>HSE &amp; Safety</h3>
+        <p>Penerapan SMKP Minerba, manajemen risiko, dan sistem keselamatan kerja yang benar-benar hidup di lapangan.</p>
+        <ul class="exp-card__tags"><li>SMKP</li><li>Risk Management</li><li>Safety Systems</li></ul>
+      </article>
+
+      <article class="exp-card reveal" data-reveal="fade-up" data-delay="160" data-tilt data-spot>
+        <div class="exp-card__icon">
+          <svg viewBox="0 0 48 48" aria-hidden="true">
+            <rect x="6" y="8" width="36" height="32" rx="4" />
+            <path d="M6 18h36M16 8v32" />
+            <path d="M24 28l4 4 7-8" />
+          </svg>
+        </div>
+        <h3>Project Management</h3>
+        <p>Perencanaan, eksekusi, dan kontrol operasional proyek agar sasaran teknis, biaya, dan waktu tetap terjaga.</p>
+        <ul class="exp-card__tags"><li>Planning</li><li>Execution</li><li>Operational Control</li></ul>
+      </article>
+
+      <article class="exp-card reveal" data-reveal="fade-up" data-delay="240" data-tilt data-spot>
+        <div class="exp-card__icon">
+          <svg viewBox="0 0 48 48" aria-hidden="true">
+            <circle cx="24" cy="24" r="18" />
+            <path d="M24 6c6 6 6 30 0 36M24 6c-6 6-6 30 0 36M6 24h36" />
+          </svg>
+        </div>
+        <h3>Digital Innovation</h3>
+        <p>GIS, teknologi survei, dan solusi digital yang menyederhanakan pekerjaan lapangan serta mempercepat pengambilan keputusan.</p>
+        <ul class="exp-card__tags"><li>GIS</li><li>Survey Tech</li><li>Digital Solutions</li></ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 04. PORTFOLIO ===== -->
+<section class="section portfolio" id="portfolio">
+  <div class="container">
+    <header class="section__head">
+      <p class="eyebrow reveal" data-reveal="fade-up"><span class="eyebrow__line"></span>04 — Featured Works</p>
+      <h2 class="section__title reveal shine" data-reveal="mask-up" data-split="words">Selected Projects</h2>
+      <p class="section__lead reveal" data-reveal="fade-up" data-delay="100">
+        Pilih kategori untuk melihat karya dan kontribusi. Setiap kartu memuat peran, tahun,
+        tantangan, dan hasil.
+      </p>
+    </header>
+
+    <!-- Filter interaktif -->
+    <div class="filters reveal" data-reveal="fade-up" data-delay="140" role="tablist" aria-label="Filter proyek">
+      <button class="filter is-active" data-filter="all" role="tab" aria-selected="true">Semua</button>
+      <button class="filter" data-filter="hse" role="tab" aria-selected="false">HSE &amp; Safety</button>
+      <button class="filter" data-filter="exploration" role="tab" aria-selected="false">Exploration</button>
+      <button class="filter" data-filter="digital" role="tab" aria-selected="false">Digital</button>
+      <button class="filter" data-filter="management" role="tab" aria-selected="false">Management</button>
+    </div>
+
+    <div class="works" id="works">
+
+      <article class="work reveal" data-reveal="fade-up" data-tags="hse management" data-tilt data-spot data-project="smkp">
+        <div class="work__media">
+          <img src="assets/potret-dokumentasi-topi.jpg" alt="Dokumentasi implementasi SMKP Minerba" loading="lazy" />
+          <span class="work__year">Lead</span>
+        </div>
+        <div class="work__body">
+          <div class="work__top">
+            <span class="work__cat">HSE &amp; Safety</span>
+            <span class="work__year-inline">Peran: Lead</span>
+          </div>
+          <h3>Pengembangan &amp; Implementasi SMKP Minerba</h3>
+          <p>Menyusun kerangka Sistem Manajemen Keselamatan Pertambangan dan mendampingi penerapannya agar tidak berhenti sebagai dokumen.</p>
+          <dl class="work__detail">
+            <div><dt>Tantangan</dt><dd>Menjadikan kepatuhan sebagai kebiasaan kerja, bukan sekadar administrasi.</dd></div>
+            <div><dt>Hasil</dt><dd>Sistem keselamatan tertata dan dapat diaudit secara konsisten.</dd></div>
+          </dl>
+          <button class="work__more" type="button" data-open-project="smkp">
+            Lihat Detail <span aria-hidden="true">→</span>
+          </button>
+        </div>
+      </article>
+
+      <article class="work reveal" data-reveal="fade-up" data-delay="80" data-tags="hse exploration" data-tilt data-spot data-project="morowali">
+        <div class="work__media">
+          <img src="assets/ilustrasi-operasi-lapangan-ai.jpg" alt="HSE management proyek eksplorasi nikel Morowali" loading="lazy" />
+          <span class="work__year">HSE</span>
+        </div>
+        <div class="work__body">
+          <div class="work__top">
+            <span class="work__cat">Exploration · HSE</span>
+            <span class="work__year-inline">Peran: HSE Management</span>
+          </div>
+          <h3>HSE Management — Eksplorasi Nikel Morowali</h3>
+          <p>Pengelolaan aspek keselamatan pada kegiatan eksplorasi di area kerja dengan mobilitas tinggi dan medan yang menantang.</p>
+          <dl class="work__detail">
+            <div><dt>Tantangan</dt><dd>Menyelaraskan target eksplorasi dengan disiplin keselamatan harian.</dd></div>
+            <div><dt>Hasil</dt><dd>Protokol kerja lapangan yang jelas dan dipahami seluruh tim.</dd></div>
+          </dl>
+          <button class="work__more" type="button" data-open-project="morowali">
+            Lihat Detail <span aria-hidden="true">→</span>
+          </button>
+        </div>
+      </article>
+
+      <article class="work reveal" data-reveal="fade-up" data-delay="160" data-tags="exploration hse" data-tilt data-spot data-project="pemboran">
+        <div class="work__media">
+          <img src="assets/grafik-stratigrafi.jpg" alt="Sistem keselamatan kerja pemboran dan eksplorasi" loading="lazy" />
+          <span class="work__year">Direct</span>
+        </div>
+        <div class="work__body">
+          <div class="work__top">
+            <span class="work__cat">Exploration</span>
+            <span class="work__year-inline">Peran: Dikerjakan langsung</span>
+          </div>
+          <h3>Sistem Keselamatan Kerja Pemboran &amp; Eksplorasi</h3>
+          <p>Rancangan prosedur kerja pemboran yang memperhatikan risiko alat, manusia, dan lingkungan sekitar lokasi bor.</p>
+          <dl class="work__detail">
+            <div><dt>Tantangan</dt><dd>Variasi kondisi lokasi bor menuntut prosedur yang luwes namun tegas.</dd></div>
+            <div><dt>Hasil</dt><dd>Standar kerja bor yang konsisten di setiap lokasi.</dd></div>
+          </dl>
+          <button class="work__more" type="button" data-open-project="pemboran">
+            Lihat Detail <span aria-hidden="true">→</span>
+          </button>
+        </div>
+      </article>
+
+      <article class="work reveal" data-reveal="fade-up" data-tags="digital management" data-tilt data-spot data-project="monitoring">
+        <div class="work__media">
+          <img src="assets/aktivitas-digital-kucing.jpg" alt="Sistem monitoring operasional digital" loading="lazy" />
+          <span class="work__year">System</span>
+        </div>
+        <div class="work__body">
+          <div class="work__top">
+            <span class="work__cat">Digital Innovation</span>
+            <span class="work__year-inline">Peran: Inisiasi &amp; pendampingan</span>
+          </div>
+          <h3>Sistem Monitoring Operasional</h3>
+          <p>Pengembangan cara pemantauan aktivitas operasional agar progres dan kendala terlihat lebih cepat oleh tim.</p>
+          <dl class="work__detail">
+            <div><dt>Tantangan</dt><dd>Data lapangan yang tersebar perlu disatukan dalam satu alur sederhana.</dd></div>
+            <div><dt>Hasil</dt><dd>Pelaporan operasional lebih cepat dan mudah ditelusuri.</dd></div>
+          </dl>
+          <button class="work__more" type="button" data-open-project="monitoring">
+            Lihat Detail <span aria-hidden="true">→</span>
+          </button>
+        </div>
+      </article>
+
+      <article class="work reveal" data-reveal="fade-up" data-delay="80" data-tags="digital exploration" data-tilt data-spot data-project="geosurvey">
+        <div class="work__media">
+          <img src="assets/jelajah-geologi.jpg" alt="Pengembangan aplikasi Geosurvey Spatialize" loading="lazy" />
+          <span class="work__year">App</span>
+        </div>
+        <div class="work__body">
+          <div class="work__top">
+            <span class="work__cat">Digital Innovation</span>
+            <span class="work__year-inline">Peran: Kontribusi teknis</span>
+          </div>
+          <h3>Pengembangan Aplikasi Geosurvey Spatialize</h3>
+          <p>Kontribusi pada pengembangan aplikasi survei geologi yang membantu pencatatan dan pemetaan data lapangan secara digital.</p>
+          <dl class="work__detail">
+            <div><dt>Tantangan</dt><dd>Menjembatani kebutuhan geologi lapangan dengan alur data digital.</dd></div>
+            <div><dt>Hasil</dt><dd>Proses pencatatan survei lebih rapi dan mudah diolah.</dd></div>
+          </dl>
+          <button class="work__more" type="button" data-open-project="geosurvey">
+            Lihat Detail <span aria-hidden="true">→</span>
+          </button>
+        </div>
+      </article>
+
+      <article class="work reveal" data-reveal="fade-up" data-delay="160" data-tags="management" data-tilt data-spot data-project="dokumen">
+        <div class="work__media">
+          <img src="assets/potret-dokumentasi-merah.jpg" alt="Dokumen teknis dan manajemen pertambangan" loading="lazy" />
+          <span class="work__year">Docs</span>
+        </div>
+        <div class="work__body">
+          <div class="work__top">
+            <span class="work__cat">Project Management</span>
+            <span class="work__year-inline">Peran: Penyusunan</span>
+          </div>
+          <h3>Dokumen Teknis &amp; Manajemen Pertambangan</h3>
+          <p>Penyusunan dokumen teknis dan manajemen yang menjadi rujukan pelaksanaan pekerjaan di lapangan.</p>
+          <dl class="work__detail">
+            <div><dt>Tantangan</dt><dd>Menjaga keselarasan antara dokumen resmi dan praktik di lapangan.</dd></div>
+            <div><dt>Hasil</dt><dd>Rujukan kerja yang jelas bagi tim teknis maupun operasional.</dd></div>
+          </dl>
+          <button class="work__more" type="button" data-open-project="dokumen">
+            Lihat Detail <span aria-hidden="true">→</span>
+          </button>
+        </div>
+      </article>
+
+    </div>
+
+    <p class="works__empty" id="worksEmpty" hidden>Tidak ada proyek pada kategori ini.</p>
+  </div>
+</section>
+
+<!-- ===== PROJECT TIMELINE ===== -->
+<section class="section timeline-section">
+  <div class="container">
+    <header class="section__head section__head--center">
+      <p class="eyebrow reveal" data-reveal="fade-up"><span class="eyebrow__line"></span>Project Timeline</p>
+      <h2 class="section__title reveal" data-reveal="mask-up" data-split="words">Perjalanan Karier</h2>
+    </header>
+
+    <ol class="timeline">
+      <li class="timeline__item reveal" data-reveal="fade-right">
+        <span class="timeline__dot"></span>
+        <div class="timeline__card">
+          <span class="timeline__year">Awal karier</span>
+          <h3>Fondasi Geologi &amp; Eksplorasi</h3>
+          <p>Belajar membaca batuan, data bor, dan dinamika kerja lapangan yang menjadi dasar seluruh karier.</p>
+        </div>
+      </li>
+      <li class="timeline__item reveal" data-reveal="fade-right" data-delay="80">
+        <span class="timeline__dot"></span>
+        <div class="timeline__card">
+          <span class="timeline__year">Pengembangan</span>
+          <h3>Operasi Pemboran &amp; Projek Eksplorasi</h3>
+          <p>Menangani pelaksanaan pemboran dan operasi eksplorasi di berbagai wilayah kerja.</p>
+        </div>
+      </li>
+      <li class="timeline__item reveal" data-reveal="fade-right" data-delay="160">
+        <span class="timeline__dot"></span>
+        <div class="timeline__card">
+          <span class="timeline__year">Pendalaman</span>
+          <h3>HSE &amp; Keselamatan Pertambangan</h3>
+          <p>Mendalami SMKP Minerba, manajemen risiko, dan membangun budaya keselamatan di lapangan.</p>
+        </div>
+      </li>
+      <li class="timeline__item reveal" data-reveal="fade-right" data-delay="240">
+        <span class="timeline__dot"></span>
+        <div class="timeline__card">
+          <span class="timeline__year">Saat ini</span>
+          <h3>Project Management &amp; Digital Innovation</h3>
+          <p>Menggabungkan pengalaman lapangan dengan teknologi, GIS, dan solusi digital.</p>
+        </div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ===== 05. AFFILIATIONS ===== -->
+<section class="section affiliations" id="affiliations">
+  <div class="container">
+    <header class="section__head">
+      <p class="eyebrow reveal" data-reveal="fade-up"><span class="eyebrow__line"></span>05 — Professional Affiliations</p>
+      <h2 class="section__title reveal" data-reveal="mask-up" data-split="words">Companies &amp; Organizations</h2>
+      <p class="section__lead reveal" data-reveal="fade-up" data-delay="100">
+        Throughout my professional journey, I have had the opportunity to contribute my knowledge,
+        expertise, and experience across various organizations and projects in the mining, mineral
+        exploration, and related industries.
+      </p>
+      <p class="section__note reveal" data-reveal="fade-up" data-delay="160">
+        This section highlights selected companies and organizations with which I have been
+        professionally involved. The views and content of each corporate website belong to their
+        respective organizations.
+      </p>
+    </header>
+
+    <div class="affil__grid">
+      <a class="affil-card reveal" data-reveal="fade-up" data-tilt data-spot href="#" target="_blank" rel="noopener">
+        <span class="affil-card__logo">
+          <svg viewBox="0 0 60 60" aria-hidden="true">
+            <path d="M8 46 L22 22 L32 38 L42 20 L52 46 Z" />
+            <path d="M6 52 H54" />
+          </svg>
+        </span>
+        <span class="affil-card__body">
+          <strong>CV Sunarie Pusaka</strong>
+          <em>Mining Exploration</em>
+          <span class="affil-card__role">Professional involvement</span>
+        </span>
+        <span class="affil-card__link">Visit Website <span>→</span></span>
+      </a>
+
+      <a class="affil-card reveal" data-reveal="fade-up" data-delay="80" data-tilt data-spot href="#" target="_blank" rel="noopener">
+        <span class="affil-card__logo">
+          <svg viewBox="0 0 60 60" aria-hidden="true">
+            <circle cx="30" cy="30" r="20" />
+            <path d="M10 30 H50 M30 10 C38 20 38 40 30 50 M30 10 C22 20 22 40 30 50" />
+          </svg>
+        </span>
+        <span class="affil-card__body">
+          <strong>PT Minelog Services Indonesia</strong>
+          <em>Mineral &amp; Coal Exploration Consulting</em>
+          <span class="affil-card__role">Professional involvement</span>
+        </span>
+        <span class="affil-card__link">Visit Website <span>→</span></span>
+      </a>
+
+      <a class="affil-card reveal" data-reveal="fade-up" data-delay="160" data-tilt data-spot href="#" target="_blank" rel="noopener">
+        <span class="affil-card__logo">
+          <svg viewBox="0 0 60 60" aria-hidden="true">
+            <rect x="10" y="16" width="18" height="28" rx="3" />
+            <rect x="32" y="24" width="18" height="20" rx="3" />
+            <path d="M6 50 H54" />
+          </svg>
+        </span>
+        <span class="affil-card__body">
+          <strong>Other Organizations</strong>
+          <em>Mining &amp; Geology</em>
+          <span class="affil-card__role">Selected contributions</span>
+        </span>
+        <span class="affil-card__link">Visit Website <span>→</span></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 07. CREDENTIALS ===== -->
+<section class="section credentials" id="credentials">
+  <div class="container">
+    <header class="section__head section__head--center">
+      <p class="eyebrow reveal" data-reveal="fade-up"><span class="eyebrow__line"></span>07 — Credentials &amp; Recognition</p>
+      <h2 class="section__title reveal" data-reveal="mask-up" data-split="words">Kredensial yang Merepresentasikan Kompetensi</h2>
+    </header>
+
+    <div class="cred__grid">
+      <article class="cred-card reveal" data-reveal="zoom" data-tilt>
+        <span class="cred-card__icon">◉</span>
+        <h3>PPR Tingkat 1 — BAPETEN</h3>
+        <p>Kualifikasi Petugas Proteksi Radiasi untuk mendukung kegiatan yang memanfaatkan sumber radiasi.</p>
+      </article>
+      <article class="cred-card reveal" data-reveal="zoom" data-delay="80" data-tilt>
+        <span class="cred-card__icon">✦</span>
+        <h3>Ahli K3 Umum — KEMNAKER</h3>
+        <p>Kompetensi keselamatan dan kesehatan kerja umum sesuai ketentuan ketenagakerjaan.</p>
+      </article>
+      <article class="cred-card reveal" data-reveal="zoom" data-delay="160" data-tilt>
+        <span class="cred-card__icon">◆</span>
+        <h3>Implementor SMKP Minerba — PPSDM Geominerba</h3>
+        <p>Kualifikasi penerapan Sistem Manajemen Keselamatan Pertambangan Mineral dan Batubara.</p>
+      </article>
+      <article class="cred-card reveal" data-reveal="zoom" data-delay="240" data-tilt>
+        <span class="cred-card__icon">▲</span>
+        <h3>Implementasi Sistem Keselamatan Pertambangan</h3>
+        <p>Pengalaman membangun dan menerapkan sistem keselamatan pertambangan di lingkungan kerja nyata.</p>
+      </article>
+    </div>
+
+    <p class="cred__note reveal" data-reveal="fade-up">
+      Nama sertifikasi, lembaga penerbit, dan status ditulis mengikuti dokumen resmi yang berlaku.
+    </p>
+  </div>
+</section>
+
+<!-- ===== 06. JOURNAL ===== -->
+<section class="section journal" id="journal">
+  <div class="container">
+    <header class="section__head">
+      <p class="eyebrow reveal" data-reveal="fade-up"><span class="eyebrow__line"></span>06 — Thoughts &amp; Insights</p>
+      <h2 class="section__title reveal shine" data-reveal="mask-up" data-split="words">Journal</h2>
+      <p class="section__lead reveal" data-reveal="fade-up" data-delay="100">
+        Ruang untuk berbagi pemikiran dan pengalaman — dibangun bertahap, bukan sekaligus.
+      </p>
+    </header>
+
+    <div class="journal__grid">
+      <article class="journal-item reveal" data-reveal="fade-up" data-spot>
+        <span class="journal-item__cat">Mining &amp; Exploration Insights</span>
+        <h3>Membaca Data Bor Sebelum Memutuskan Langkah Berikutnya</h3>
+        <p>Bagaimana disiplin membaca data membuat keputusan eksplorasi lebih terarah dan hemat.</p>
+        <span class="journal-item__meta">Draft · Segera</span>
+      </article>
+      <article class="journal-item reveal" data-reveal="fade-up" data-delay="80" data-spot>
+        <span class="journal-item__cat">HSE &amp; Safety Management</span>
+        <h3>Agar SMKP Tidak Berhenti Jadi Dokumen</h3>
+        <p>Catatan lapangan tentang mengubah kepatuhan menjadi kebiasaan kerja sehari-hari.</p>
+        <span class="journal-item__meta">Draft · Segera</span>
+      </article>
+      <article class="journal-item reveal" data-reveal="fade-up" data-delay="160" data-spot>
+        <span class="journal-item__cat">Technology &amp; Digital Innovation</span>
+        <h3>Digitalisasi Survei: Kecil, Sederhana, Berdampak</h3>
+        <p>Mengapa perubahan alur data yang sederhana sering terasa paling besar manfaatnya.</p>
+        <span class="journal-item__meta">Draft · Segera</span>
+      </article>
+      <article class="journal-item reveal" data-reveal="fade-up" data-delay="240" data-spot>
+        <span class="journal-item__cat">Personal Notes &amp; Reflections</span>
+        <h3>Belajar dari Lapangan, Bukan Hanya dari Ruang Rapat</h3>
+        <p>Refleksi tentang nilai pengalaman langsung dalam mengambil keputusan teknis.</p>
+        <span class="journal-item__meta">Draft · Segera</span>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PHOTO GALLERY ===== -->
+<section class="section gallery" id="gallery">
+  <div class="container">
+    <header class="section__head section__head--center">
+      <p class="eyebrow reveal" data-reveal="fade-up"><span class="eyebrow__line"></span>Photo Gallery</p>
+      <h2 class="section__title reveal" data-reveal="mask-up" data-split="words">Dokumentasi Lapangan &amp; Keseharian</h2>
+      <p class="section__lead reveal" data-reveal="fade-up" data-delay="100">
+        Klik salah satu foto untuk melihat lebih dekat.
+      </p>
+    </header>
+
+    <div class="gallery__grid" id="galleryGrid">
+      <button class="g-item reveal" data-reveal="zoom" data-src="assets/jelajah-geologi.jpg" data-caption="Jelajah geologi — membaca kondisi lapangan.">
+        <img src="assets/jelajah-geologi.jpg" alt="Jelajah geologi" loading="lazy" />
+        <span class="g-item__label">Jelajah Geologi</span>
+      </button>
+      <button class="g-item reveal" data-reveal="zoom" data-delay="60" data-src="assets/grafik-stratigrafi.jpg" data-caption="Grafik stratigrafi — data menjadi cerita.">
+        <img src="assets/grafik-stratigrafi.jpg" alt="Grafik stratigrafi" loading="lazy" />
+        <span class="g-item__label">Grafik Stratigrafi</span>
+      </button>
+      <button class="g-item reveal" data-reveal="zoom" data-delay="120" data-src="assets/potret-dokumentasi-topi.jpg" data-caption="Dokumentasi lapangan — siap bekerja.">
+        <img src="assets/potret-dokumentasi-topi.jpg" alt="Potret dokumentasi topi" loading="lazy" />
+        <span class="g-item__label">Dokumentasi Lapangan</span>
+      </button>
+      <button class="g-item reveal" data-reveal="zoom" data-delay="180" data-src="assets/potret-dokumentasi-merah.jpg" data-caption="Dokumentasi profesional.">
+        <img src="assets/potret-dokumentasi-merah.jpg" alt="Potret dokumentasi merah" loading="lazy" />
+        <span class="g-item__label">Potret Profesional</span>
+      </button>
+      <button class="g-item reveal" data-reveal="zoom" data-delay="240" data-src="assets/ilustrasi-operasi-lapangan-ai.jpg" data-caption="Operasi lapangan — kolaborasi tim.">
+        <img src="assets/ilustrasi-operasi-lapangan-ai.jpg" alt="Operasi lapangan" loading="lazy" />
+        <span class="g-item__label">Operasi Lapangan</span>
+      </button>
+      <button class="g-item reveal" data-reveal="zoom" data-delay="300" data-src="assets/bersepeda.jpg" data-caption="Bersepeda — menjaga energi di luar kerja.">
+        <img src="assets/bersepeda.jpg" alt="Bersepeda" loading="lazy" />
+        <span class="g-item__label">Bersepeda</span>
+      </button>
+      <button class="g-item reveal" data-reveal="zoom" data-delay="360" data-src="assets/momen-keluarga.jpg" data-caption="Momen keluarga — sisi personal yang hangat.">
+        <img src="assets/momen-keluarga.jpg" alt="Momen keluarga" loading="lazy" />
+        <span class="g-item__label">Momen Keluarga</span>
+      </button>
+      <button class="g-item reveal" data-reveal="zoom" data-delay="420" data-src="assets/keluarga-kucing.jpg" data-caption="Keluarga kucing — rumah yang homey.">
+        <img src="assets/keluarga-kucing.jpg" alt="Keluarga kucing" loading="lazy" />
+        <span class="g-item__label">Sisi Homey</span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 08. CONTACT ===== -->
+<section class="section contact" id="contact">
+  <div class="container">
+    <div class="contact__grid">
+      <div class="contact__intro">
+        <p class="eyebrow reveal" data-reveal="fade-up"><span class="eyebrow__line"></span>08 — Let's Connect</p>
+        <h2 class="section__title reveal" data-reveal="mask-up" data-split="words">
+          Mari <em>berbincang</em> dan bertukar pengetahuan.
+        </h2>
+        <p class="contact__quote reveal" data-reveal="fade-up" data-delay="100">
+          “Good ideas grow through conversations. Let's connect, exchange knowledge,
+          and explore possibilities.”
+        </p>
+
+        <ul class="contact__list">
+          <li class="reveal" data-reveal="fade-left">
+            <span class="contact__ico">✉</span>
+            <a href="mailto:yudhisak@sunariepusaka.id">yudhisak@sunariepusaka.id</a>
+          </li>
+          <li class="reveal" data-reveal="fade-left" data-delay="70">
+            <span class="contact__ico">☎</span>
+            <a href="https://wa.me/6281362333050" target="_blank" rel="noopener">WhatsApp</a>
+          </li>
+          <li class="reveal" data-reveal="fade-left" data-delay="140">
+            <span class="contact__ico">in</span>
+            <a href="https://www.linkedin.com/in/yudhisakkautama/" target="_blank" rel="noopener">LinkedIn</a>
+          </li>
+        </ul>
+      </div>
+
+      <form class="contact__form reveal" data-reveal="fade-scale" data-delay="120" id="contactForm" novalidate>
+        <div class="field">
+          <label for="name">Nama</label>
+          <input type="text" id="name" name="name" placeholder="Nama Anda" required />
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="nama@email.com" required />
+        </div>
+        <div class="field">
+          <label for="subject">Topik</label>
+          <select id="subject" name="subject">
+            <option>Kolaborasi proyek</option>
+            <option>Konsultasi HSE &amp; keselamatan</option>
+            <option>Eksplorasi &amp; geologi</option>
+            <option>Digital &amp; GIS</option>
+            <option>Lainnya</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="message">Pesan</label>
+          <textarea id="message" name="message" rows="5" placeholder="Tuliskan pesan Anda…" required></textarea>
+        </div>
+        <!-- Honeypot anti-spam: tersembunyi dari manusia, sering diisi bot -->
+        <input type="checkbox" name="botcheck" class="form__hp" tabindex="-1" autocomplete="off" aria-hidden="true" />
+        <button type="submit" class="btn btn--solid btn--full" data-magnetic>
+          Kirim Pesan <span class="btn__arrow">→</span>
+        </button>
+        <p class="form__status" id="formStatus" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="container footer__inner">
+    <div class="footer__brand">
+      <span class="nav__brand-mark">YS</span>
+      <div>
+        <strong>Yudhi Sakkautama</strong>
+        <em>Mining Exploration · HSE · Project Management · Digital Innovation</em>
+      </div>
+    </div>
+    <p class="footer__philosophy">
+      “A place to share what I do, what I have learned, what I have built,
+      and the people and projects I have been part of.”
+    </p>
+    <div class="footer__bottom">
+      <span>© <span id="year"></span> Yudhi Sakkautama. Personal Professional Hub.</span>
+      <a href="#home" class="footer__top">Kembali ke atas ↑</a>
+    </div>
+  </div>
+</footer>
+
+<!-- ===== LIGHTBOX ===== -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Pratinjau foto">
+  <button class="lightbox__close" id="lightboxClose" aria-label="Tutup">×</button>
+  <button class="lightbox__nav lightbox__nav--prev" id="lightboxPrev" aria-label="Sebelumnya">‹</button>
+  <figure class="lightbox__figure">
+    <img id="lightboxImg" src="" alt="" />
+    <figcaption id="lightboxCaption"></figcaption>
+  </figure>
+  <button class="lightbox__nav lightbox__nav--next" id="lightboxNext" aria-label="Berikutnya">›</button>
+</div>
+
+<!-- ===== PROJECT DETAIL MODAL ===== -->
+<div class="pmodal" id="projectModal" role="dialog" aria-modal="true" aria-labelledby="pmodalTitle" hidden>
+  <div class="pmodal__backdrop" data-close-project></div>
+  <div class="pmodal__panel" role="document">
+    <button class="pmodal__close" type="button" data-close-project aria-label="Tutup detail">×</button>
+
+    <div class="pmodal__media">
+      <img id="pmodalImg" src="" alt="" />
+    </div>
+
+    <div class="pmodal__content">
+      <div class="pmodal__meta">
+        <span class="pmodal__cat" id="pmodalCat"></span>
+        <span class="pmodal__role" id="pmodalRole"></span>
+      </div>
+      <h3 class="pmodal__title" id="pmodalTitle"></h3>
+      <p class="pmodal__lead" id="pmodalLead"></p>
+
+      <dl class="pmodal__facts">
+        <div><dt>Konteks</dt><dd id="pmodalContext"></dd></div>
+        <div><dt>Tantangan</dt><dd id="pmodalChallenge"></dd></div>
+        <div><dt>Pendekatan</dt><dd id="pmodalApproach"></dd></div>
+        <div><dt>Hasil</dt><dd id="pmodalResult"></dd></div>
+      </dl>
+
+      <div class="pmodal__tags" id="pmodalTags"></div>
+
+      <div class="pmodal__nav">
+        <button class="pmodal__arrow" type="button" id="pmodalPrev" aria-label="Proyek sebelumnya">‹ Sebelumnya</button>
+        <button class="pmodal__arrow" type="button" id="pmodalNext" aria-label="Proyek berikutnya">Berikutnya ›</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== SCROLL TO TOP ===== -->
+<button class="to-top" id="toTop" aria-label="Kembali ke atas">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V6m0 0l-6 6m6-6l6 6"/></svg>
+  <svg class="to-top__ring" viewBox="0 0 44 44" aria-hidden="true">
+    <circle cx="22" cy="22" r="20" />
+  </svg>
+</button>
+
+<!-- Skrip dimuat berurutan: core → config → data → animasi → interaksi → modal → galeri → form → misc -->
+<script src="js/core.js"></script>
+<script src="js/config.js"></script>
+<script>
+  /* config.local.js bersifat opsional (berisi access key, diabaikan git).
+     Dimuat dinamis agar tidak memicu 404 di hosting yang belum mengisinya.
+     async=false menjaga urutan eksekusi tetap sebelum forms.js. */
+  (function () {
+    var s = document.createElement('script');
+    s.src = 'js/config.local.js';
+    s.async = false;
+    s.onerror = function () { /* tidak ada file lokal — form berjalan mode demo */ };
+    document.head.appendChild(s);
+  })();
+</script>
+<script src="js/projects-data.js"></script>
+<script src="js/text-anim.js"></script>
+<script src="js/interactions.js"></script>
+<script src="js/projects-modal.js"></script>
+<script src="js/gallery.js"></script>
+<script src="js/forms.js"></script>
+<script src="js/misc.js"></script>
+</body>
+</html>

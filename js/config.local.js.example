@@ -1,0 +1,20 @@
+/* ==========================================================================
+   CONTOH KONFIGURASI LOKAL
+   ---------------------------------------------------------------------------
+   Salin file ini menjadi  js/config.local.js  lalu isi access key Anda.
+
+   CARA MENDAPATKAN ACCESS KEY (gratis, tanpa server):
+   1. Buka  https://web3forms.com
+   2. Masukkan email tujuan Anda
+   3. Klik "Create Access Key"
+   4. Cek kotak masuk email tersebut, salin Access Key yang dikirim
+   5. Tempel di bawah menggantikan tulisan ISI-ACCESS-KEY-ANDA
+
+   Catatan: file js/config.local.js diabaikan git, jadi kunci Anda
+   tidak akan ikut ter-push ke repositori publik.
+   ========================================================================== */
+window.YS = window.YS || {};
+
+window.YS.CONTACT = Object.assign({}, window.YS.CONTACT, {
+  accessKey: 'ISI-ACCESS-KEY-ANDA',
+});

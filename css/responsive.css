@@ -1,0 +1,81 @@
+/* ==========================================================================
+   06. RESPONSIVE — Media queries breakpoints
+   ========================================================================== */
+
+@media (max-width:1080px){
+  .expertise__grid{grid-template-columns:repeat(2,1fr)}
+  .works{grid-template-columns:repeat(2,1fr)}
+  .cred__grid{grid-template-columns:repeat(2,1fr)}
+  .hero__wrap{grid-template-columns:1fr;gap:3rem}
+  .hero__right{order:-1}
+  .hero__portrait{max-width:330px}
+  .about__grid,.contact__grid{grid-template-columns:1fr}
+  .about__card{position:static}
+  .affil__grid{grid-template-columns:1fr}
+  .gallery__grid{grid-template-columns:repeat(3,1fr);grid-auto-rows:86px}
+  .g-item:nth-child(1){grid-column:span 2;grid-row:span 3}
+  .g-item:nth-child(2){grid-row:span 2}
+  .g-item:nth-child(5){grid-column:span 2;grid-row:span 2}
+}
+
+@media (max-width:860px){
+  :root{--nav-h:74px}
+  .nav__links{
+    position:fixed;inset:var(--nav-h) 0 auto 0;
+    flex-direction:column;align-items:stretch;gap:0;
+    background:rgba(253,252,249,.98);backdrop-filter:blur(18px);
+    padding:1rem 1.3rem 1.6rem;
+    border-bottom:1px solid var(--line);
+    box-shadow:0 30px 60px -30px rgba(18,36,63,.4);
+    transform:translateY(-120%);opacity:0;visibility:hidden;
+    transition:transform .55s var(--ease-soft),opacity .4s,visibility .5s;
+  }
+  .nav__links.is-open{transform:none;opacity:1;visibility:visible}
+  .nav__link{padding:.85rem .4rem;border-bottom:1px solid var(--line-soft);border-radius:0;font-size:.95rem}
+  .nav__link::after{display:none}
+  .nav__toggle{display:flex}
+  .nav__cta{display:none}
+  .nav__brand-text em{display:none}
+  .journal__grid{grid-template-columns:1fr}
+  .gallery__grid{grid-template-columns:repeat(2,1fr);grid-auto-rows:82px}
+  .g-item:nth-child(1){grid-column:span 2;grid-row:span 3}
+  .g-item:nth-child(2){grid-row:span 2}
+  .g-item:nth-child(3),
+  .g-item:nth-child(4),
+  .g-item:nth-child(6),
+  .g-item:nth-child(7),
+  .g-item:nth-child(8){grid-row:span 3}
+  .g-item:nth-child(5){grid-column:span 2;grid-row:span 2}
+  .hero__meta{gap:1.6rem}
+  .pmodal__panel{grid-template-columns:1fr;max-height:90vh}
+  .pmodal__media{min-height:200px;max-height:34vh}
+  .pmodal__content{padding:1.9rem 1.5rem 1.7rem}
+  .pmodal__title{font-size:1.34rem}
+}
+
+@media (max-width:600px){
+  .container{width:min(100% - 1.9rem,var(--container))}
+  .expertise__grid,.works,.cred__grid{grid-template-columns:1fr}
+  .hero{padding-top:calc(var(--nav-h) + 2rem)}
+  .hero__title{font-size:clamp(2.7rem,13vw,3.6rem)}
+  .hero__actions{flex-direction:column;align-items:stretch}
+  .hero__actions .btn{justify-content:center}
+  .hero__badge{left:auto;right:-6px;bottom:26px}
+  .gallery__grid{grid-template-columns:1fr;grid-auto-rows:auto}
+  .g-item,
+  .g-item:nth-child(1),
+  .g-item:nth-child(2),
+  .g-item:nth-child(3),
+  .g-item:nth-child(4),
+  .g-item:nth-child(5),
+  .g-item:nth-child(6),
+  .g-item:nth-child(7),
+  .g-item:nth-child(8){grid-column:span 1;grid-row:auto}
+  /* Di kolom tunggal setiap foto memakai rasio aslinya agar tidak terpotong */
+  .g-item img{aspect-ratio:4/3;height:auto}
+  .g-item__label{transform:none;opacity:1}
+  .timeline{padding-left:1.6rem}
+  .timeline__dot{left:-1.62rem}
+  .footer__bottom{flex-direction:column;align-items:flex-start}
+  .cursor-glow{display:none}
+}
